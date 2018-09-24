@@ -24,7 +24,7 @@
             </el-form-item>
 
             <el-form-item>
-                <el-button type="success" @click="save">保 存</el-button>
+                <el-button type="success" @click="save" :loading="saving">保 存</el-button>
                 <el-button @click="back">取消</el-button>
             </el-form-item>
         </el-form>
@@ -52,6 +52,7 @@
         },
         data() {
             return {
+                saving: false,
                 form: deepCopy(initForm),
             }
         },
@@ -62,10 +63,12 @@
         },
         methods: {
             save() {
+                this.saving = true;
                 let param = deepCopy(this.form);
                 this.$api.screen_shot.job_save({
                     data: param
                 }).then(resp => {
+                    this.saving = false;
                     let data = resp.data;
                     if (data.code === 0) {
                         this.$router.push('/home/screen_shot');
