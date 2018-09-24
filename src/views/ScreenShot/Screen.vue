@@ -17,12 +17,12 @@
                 </el-select>
             </div>
             <div class="filter-item">
-                <el-button type="primary" size="medium" @click="handleSearch" :loading="searchLoading"><i
+                <el-button type="primary" size="medium" @click="handleSearch" :disabled="searchLoading"><i
                         class="el-icon-search"></i> Search
                 </el-button>
             </div>
             <div class="filter-item">
-                <el-button type="info" size="medium" @click="handleReset" :loading="searchLoading"><i
+                <el-button type="info" size="medium" @click="handleReset" :disabled="searchLoading"><i
                         class="el-icon-refresh"></i> Reset
                 </el-button>
             </div>
