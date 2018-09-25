@@ -6,7 +6,7 @@
             <router-link v-if="m.menu" :to="m.path" :key="k" class="router">
                 <el-menu-item :index="m.path" class="menu-item" :title="m.label">
                     <i class="el-icon-menu"></i>
-                    <span slot="title" v-text="m.label_en"></span>
+                    <span slot="title" v-text="m.label"></span>
                 </el-menu-item>
             </router-link>
         </div>

@@ -18,17 +18,17 @@
             </div>
             <div class="filter-item">
                 <el-button type="primary" size="medium" @click="handleSearch" :disabled="searchLoading"><i
-                        class="el-icon-search"></i> Search
+                        class="el-icon-search"></i>
                 </el-button>
             </div>
             <div class="filter-item">
                 <el-button type="info" size="medium" @click="handleReset" :disabled="searchLoading"><i
-                        class="el-icon-refresh"></i> Reset
+                        class="el-icon-refresh"></i>
                 </el-button>
             </div>
 
             <div class="filter-item">
-                <el-button type="success" size="medium" @click="add"><i class="el-icon-plus"></i> Add</el-button>
+                <el-button type="success" size="medium" @click="add"><i class="el-icon-plus"></i></el-button>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
             <el-table-column
                     label="关键词">
                 <template slot-scope="scope">
-                    <el-popover trigger="hover" placement="top" title="关键词" width="300">
+                    <el-popover trigger="focus" placement="top" title="关键词" width="300">
                         <p>{{scope.row.content}}</p>
                         <div slot="reference" class="content-wrapper">
                             {{ scope.row.content }}
