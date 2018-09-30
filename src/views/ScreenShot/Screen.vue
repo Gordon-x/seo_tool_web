@@ -60,6 +60,10 @@
                 </template>
             </el-table-column>
             <el-table-column
+                    label="客户端"
+                    prop="client">
+            </el-table-column>
+            <el-table-column
                     label="状态"
                     width="180">
                 <template slot-scope="scope">
