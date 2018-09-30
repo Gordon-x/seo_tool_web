@@ -75,16 +75,19 @@
                 <template slot-scope="scope">
                     <el-tooltip class="item" effect="dark" :content="tip_desc(scope.row.status)" placement="top">
                         <el-button
+                                :disabled="disableClick(scope.row.status)"
                                 @click="play(scope.row.id)"
                                 type="success"
                                 size="mini"><i class="iconfont icon-bofang1"></i>
                         </el-button>
                     </el-tooltip>
                     <el-button @click="edit(scope.row.id)"
+                               :disabled="disableClick(scope.row.status)"
                                type='primary'
                                size="mini"><i class="el-icon-edit"></i>
                     </el-button>
                     <el-button @click="del(scope.row.id)"
+                               :disabled="disableClick(scope.row.status)"
                                size="mini"
                                type="danger"><i class="el-icon-delete"></i>
                     </el-button>
@@ -154,6 +157,9 @@
             this.getList();
         },
         methods: {
+            disableClick(status) {
+                return +status === 1 || +status === 2;
+            },
             tip_desc(status) {
                 if (+status === 3) {
                     return '重新截图';
